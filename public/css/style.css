@@ -1,0 +1,16 @@
+body {
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 14px;
+  font-family: "Playfair Display", serif;
+  color: #626262;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+ .card-img{
+
+ }

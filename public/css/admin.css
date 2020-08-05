@@ -1,0 +1,39 @@
+.profile{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+.profile-info{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+.list-group-item{
+    text-decoration: none;
+}
+.user-profile{
+    padding: 15px;
+}
+.profile-info-element{
+    margin-bottom: 10px;
+}
+.button-group-item{
+    margin: 0;
+    border: none !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+
+#all-users{
+    display: none;
+}
+#add-new-service{
+    display: none;
+}
+#all-services{
+    display: none;
+}

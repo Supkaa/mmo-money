@@ -1,0 +1,80 @@
+ .slider {
+    margin-bottom: 25px;
+  
+  }
+
+
+  header {
+    margin-bottom: 15px;
+  }
+  
+  .posts {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .posts .grid-posts .card {
+    border: 0;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+  }
+  
+  .posts .grid-posts .card-img {
+    min-height: 240px;
+    max-width: 240px;
+  }
+  
+  .posts .grid-posts .load-more {
+    padding: 2rem 3rem;
+    border-color: #626262;
+  }
+  
+  .load-more span {
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .add-to span {
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .posts .search{
+    padding: 20px 0;
+    margin: 25px 0;
+    background-color: #f0f0f0;
+  
+  }
+  .posts .search h3{
+    color: #333;
+  }
+  
+  .posts .search form{
+    margin-top: 30px;
+  }
+  
+  .posts .search .form-input{
+    position: relative;
+  }
+  
+  .posts .search .form-input .btn{
+    position: absolute;
+    right: 0;
+    top: -5px;
+    font-size: 25px;
+  }
+  
+  .posts .search .form-control{
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    background-color: transparent;
+  }
+  
+  .posts .search .form-control:focus{
+    box-shadow: none;
+  }
+  
+  .posts .search .form-input .btn:focus{
+    box-shadow: none;
+  }
