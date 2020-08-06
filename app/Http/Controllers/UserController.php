@@ -20,8 +20,10 @@ class UserController extends Controller
                 $user->password = Hash::make($request->newPassword); 
             }elseif(!is_null($request->image)){
             Storage::delete($user->image);
-            $path = $request->file('image')->store('users');
-            $user['image'] = $path;                
+            $path = $request->file('image')->store('users', 's3');
+            Storage::disk('s3')->setVisibility($path, 'public');
+
+            $user['image'] = Storage::disk('s3')->url($path);                
             }
 
             $user->name = $request->name;
