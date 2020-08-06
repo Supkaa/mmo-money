@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes([
     'reset' => false,
     'confirm' => false,
-    'verify' => false
+    'verify' => false,
 ]);
 Route::get('/logout', 'Auth\LoginController@logout')->name('get-logout');
 Route::get('/', 'MainController@index')->name('index');

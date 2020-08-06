@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Order;
+
 
 class UserController extends Controller
 {
@@ -28,6 +30,6 @@ class UserController extends Controller
             $user->name = $request->name;
             $user->save();
         }
-        return redirect()->route('account');
+        return redirect()->route('account', 'orders');
     }
 }

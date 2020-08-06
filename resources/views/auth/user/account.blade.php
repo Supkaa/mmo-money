@@ -10,16 +10,19 @@
         <div class="row">
           <div class="col-md-2">
             <div class="card profile" style="width: 18rem;">
-              <img src="{{ (Auth::user()->image)}}" class="card-img-top" alt="...">
+              @if (!is_null(Auth::user()->image))
+                <img src="{{ (Auth::user()->image)}}" class="card-img-top" alt="...">  
+              @endif
               <div class="card-body profile-edit-button">
                 <h5>{{ Auth::user()->name }}</h5>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><button onclick="viewEdit()" class="btn btn-outline-grey login" ">Редактировать</button> </li>
-                          <li class=" list-group-item"><button id="info-button" onclick="viewInfo()"
-                      class="btn btn-outline-grey button-group-item login">Информация о себе</button></li>
-                <li class=" list-group-item"><button onclick="viewMoney()"
-                    class="btn btn-outline-grey button-group-item login">Финансы</button></li>
+                <li class="list-group-item"><button onclick="viewEdit()" 
+                    class="btn btn-outline-grey login" ">Редактировать</button> </li>
+
+                <li class=" list-group-item"><button id="info-button" onclick="viewInfo()"
+                    class="btn btn-outline-grey button-group-item login">Информация о себе</button></li>
+
                 <li class="list-group-item"><button onclick="viewPurchases()"
                     class="btn btn-outline-grey button-group-item login">Покупки</button></li>
               </ul>
@@ -31,32 +34,38 @@
               <h5 class="card-header">Информация</h5>
               <div class="card-body">
 
-                <div id="money" class="card profile-info-element">
-                  <h5 class="card-header">Финансы</h5>
-                  <div class="card-body">
-                    <p class="card-text">{{ Auth::user()->money }}</p>
-                  </div>
-                </div>
-
                 <div id="purchases" class="card profile-info-element">
                   <h5 class="card-header">Покупки</h5>
                   <div class="card-body">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Email заказчика</th>
-                          <th scope="col">Имя персонажа</th>
-                          <th scope="col">Название сервера</th>
-                          <th scope="col">Когда отправлен</th>
-                          <th scope="col">Сумма</th>
-                        </tr>
-                      </thead>
-                      <tbody>
 
-          
-                      </tbody>
+                    <table class="table table-striped">
+
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Имя персонажа</th>
+                              <th scope="col">Название сервера</th>
+                              <th scope="col">Когда отправлен</th>
+                              <th scope="col">Сумма</th>
+                            </tr>
+                          </thead>  
+                                              
+                          @foreach ($orders as $order)
+                            @if ((Auth::user()-> email) == ($order->email))
+                              <tbody>
+                                <tr>
+                                  <td>{{ $order->id }}</td>
+                                  <td>{{ $order->nickname }}</td>
+                                  <td>{{ $order->server }}</td>
+                                  <td>{{ $order->created_at }}</td>
+                                  <td>{{ $order->count }}</td>
+                                </tr>          
+                              </tbody>  
+
+                            @endif
+                          @endforeach  
                     </table>
+                    
                   </div>
                 </div>
 
@@ -130,29 +139,20 @@
 
 @section('js')
   <script>
-    function viewMoney() {
-      document.getElementById('purchases').style.display = 'none';
-      document.getElementById('edit').style.display = 'none';
-      document.getElementById('info').style.display = 'none';
-      document.getElementById('money').style.display = 'flex';
-    }
 
     function viewPurchases() {
-      document.getElementById('money').style.display = 'none';
       document.getElementById('edit').style.display = 'none';
       document.getElementById('info').style.display = 'none';
       document.getElementById('purchases').style.display = 'flex';
     }
 
     function viewEdit() {
-      document.getElementById('money').style.display = 'none';
       document.getElementById('purchases').style.display = 'none';
       document.getElementById('info').style.display = 'none';
       document.getElementById('edit').style.display = 'flex';
     }
 
     function viewInfo() {
-      document.getElementById('money').style.display = 'none';
       document.getElementById('purchases').style.display = 'none';
       document.getElementById('edit').style.display = 'none';
       document.getElementById('info').style.display = 'flex';

@@ -17,7 +17,9 @@ class MainController extends Controller
 
     public function account()
     {
-        return view('auth.user.account');
+        $orders = Order::where('status',1)->get();
+        
+        return view('auth.user.account', compact('orders'));
     }
 
     public function login()
