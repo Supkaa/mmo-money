@@ -31,7 +31,7 @@
                   <td>{{ $order->nickname }}</td>
                   <td>{{ $order->server }}</td>
                   <td>{{ $order->created_at }}</td>
-                  <td></td>
+                  <td>{{ $order->count }}</td>
                 </tr>
               @endforeach
 

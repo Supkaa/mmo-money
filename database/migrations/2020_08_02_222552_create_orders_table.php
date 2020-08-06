@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('server')->nullable();
             $table->string('nickname')->nullable();
             $table->string('email')->nullable();            
-            $table->integer('count')->default(0);
+            $table->double('count')->default(0);
             $table->timestamps();
         });
     }

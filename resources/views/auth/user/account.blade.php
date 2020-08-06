@@ -41,7 +41,22 @@
                 <div id="purchases" class="card profile-info-element">
                   <h5 class="card-header">Покупки</h5>
                   <div class="card-body">
-                    <p class="card-text">Баланс: 123123</p>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Email заказчика</th>
+                          <th scope="col">Имя персонажа</th>
+                          <th scope="col">Название сервера</th>
+                          <th scope="col">Когда отправлен</th>
+                          <th scope="col">Сумма</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+          
+                      </tbody>
+                    </table>
                   </div>
                 </div>
 

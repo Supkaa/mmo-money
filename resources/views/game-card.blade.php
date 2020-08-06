@@ -3,7 +3,7 @@
     <div class="card">
       <div class="row no-gutters">
         <div class="col-md-4">
-          <img src="{{ Storage::url($game->image) }}" class="card-img" alt="...">
+          <img src="{{ $game->image }}" class="card-img" alt="...">
         </div>
         <div class="col-md-8">
           <div class="card-body">

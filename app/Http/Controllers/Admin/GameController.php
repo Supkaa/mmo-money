@@ -38,10 +38,11 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $request->file('image')->store('games');
+        $path = $request->file('image')->store('games','s3');
+        Storage::disk('s3')->setVisibility($path, 'public');
         $params = $request->all();
-        $params['image'] = $path;
-        Game::create($params);
+        $params['image'] = Storage::disk('s3')->url($path);;
+        Game::create($params);        
         return redirect()->route('games.index');
     }
 
@@ -78,9 +79,10 @@ class GameController extends Controller
     {
         if(!is_null($request->image)){
             Storage::delete($game->image);
-            $path = $request->file('image')->store('games');
+            $path = $request->file('image')->store('games','s3');
+            Storage::disk('s3')->setVisibility($path, 'public');
             $params = $request->all();
-            $params['image'] = $path; 
+            $params['image'] = Storage::disk('s3')->url($path);; 
             $game->update($params);
         }else {
             $params = $request->all();

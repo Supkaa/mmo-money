@@ -81,8 +81,8 @@
                     </div>
 
                     <div class="col-4">
-                      <input type="number" name="count" id="count" class="form-control count"
-                        placeholder="Количество золота" min="0" step="1">
+                      <input type="text" name="count" id="count" class="form-control count"
+                        placeholder="Количество золота"  value="" min="0" step="1">
                     </div>
 
                     <div class="col-1">
@@ -108,5 +108,13 @@
 @endsection
 
 @section('js')
+<script>
+$(document).ready(function(){
+  $("#count").keyup(function(){
+    $("#total-price").val($("#count").val() * $("#price").val());
+  });
 
+});
+
+</script>
 @endsection

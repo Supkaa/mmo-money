@@ -22,7 +22,6 @@ class UserController extends Controller
             Storage::delete($user->image);
             $path = $request->file('image')->store('users', 's3');
             Storage::disk('s3')->setVisibility($path, 'public');
-
             $user['image'] = Storage::disk('s3')->url($path);                
             }
 

@@ -60,8 +60,9 @@
 
                 @foreach ($services as $service)
                   @isset($serviceServer)
-                      <option value="{{ $service->id }}">{{ $service->name }}</option>                               
-                  @endisset                    
+                  <option value="{{ $service->id }}">{{ $service->name }}</option>                               
+                  @endisset 
+                  <option value="{{ $service->id }}">{{ $service->name }}</option>                               
                 @endforeach
               </select>
               

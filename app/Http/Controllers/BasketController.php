@@ -16,7 +16,7 @@ class BasketController extends Controller
         $order->email = $request->email;
         $order->nickname = $request->nickname;
         $order->server = $request->input('server');
-        $order->count = $request->count;
+        $order->count = $request->total_price;
         $order->status=1;
         $order->save();
         
