@@ -43,7 +43,7 @@
                     </div>
                   </div>
                 </div>
-
+                @auth
                 <div class="form-group">
                   <label for="email" class="sr-only">nickname</label>
                   <input type="hidden" name="email" id="email" class="form-control" 
@@ -64,7 +64,7 @@
                     </div>
                   </div>
                 </div>
-
+                @endauth
                 <div class="form-group">
                   <label for="nickmane" class="sr-only">nickname</label>
                   <input type="text" name="nickname" id="nickname" class="form-control"
