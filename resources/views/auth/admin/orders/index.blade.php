@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Заказы')
+
 @section('css')
   <link rel="stylesheet" href="/css/admin.css">
 @endsection

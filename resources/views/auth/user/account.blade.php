@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Личный кабинет')
+
 @section('css')
   <link rel="stylesheet" href="/css/personal-account.css">
 @endsection
@@ -40,6 +42,7 @@
 
                     <table class="table table-striped">
 
+                      <h6>Активные заказы</h6>
                           <thead>
                             <tr>
                               <th scope="col">Имя персонажа</th>
@@ -52,6 +55,8 @@
                                               
                           @foreach ($orders as $order)
                             @if ((Auth::user()-> email) == ($order->email))
+                              @if ($order->status == 1)
+                              
                               <tbody>
                                 <tr>
                                   <form method="post" action={{route('user-confirm', $order)}}>
@@ -62,15 +67,52 @@
                                     <td>{{ $order->created_at }}</td>
                                     <td>{{ $order->gold }}</td>
                                     <td>{{ $order->count }}</td>
-                                    <td><button style="btn btn-outline-grey" type="submit" >Success</button></td>
+                                    <td><button style="btn btn-outline-grey" type="submit" >Подтвердить заказ</button></td>
                                   </form>
                                 </tr>          
-                              </tbody>  
+                              </tbody>    
+                              @endif
+                              
 
                             @endif
                           @endforeach  
+
                     </table>
-                    
+                    <table class="table table-striped">
+
+                      <h6>История заказов</h6>
+                      <thead>
+                        <tr>
+                          <th scope="col">Имя персонажа</th>
+                          <th scope="col">Название сервера</th>
+                          <th scope="col">Когда отправлен</th>
+                          <th scope="col">количесво внутриигровой валюты</th>
+                          <th scope="col">Сумма</th>                              
+                        </tr>
+                      </thead>  
+                                          
+                      @foreach ($orders as $order)
+                        @if ((Auth::user()-> email) == ($order->email))
+                          @if ($order->status == 0)
+                          
+                          <tbody>
+                            <tr>
+                              <form method="post" action={{route('user-confirm', $order)}}>
+                                @csrf
+                                <td>{{ $order->nickname }}</td>
+                                <td>{{ $order->server }}</td>
+                                <td>{{ $order->created_at }}</td>
+                                <td>{{ $order->gold }}</td>
+                                <td>{{ $order->count }}</td>
+                              </form>
+                            </tr>          
+                          </tbody>    
+                          @endif
+                        
+                        @endif
+                      @endforeach  
+
+                    </table>
                   </div>
                 </div>
 

@@ -1,7 +1,7 @@
 @extends('auth.layouts.master')
 
 
-@section('title')
+@section('title', 'Регистрация')
 
 @section('content')
   <form class="form-signin" method="post" action="{{ route('register') }}" aria-label="Register">

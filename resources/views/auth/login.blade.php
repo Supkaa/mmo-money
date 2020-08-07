@@ -1,7 +1,7 @@
 @extends('auth.layouts.master')
 
 
-@section('title', 'LOGIN')
+@section('title', 'Вход')
 
 @section('content')
 

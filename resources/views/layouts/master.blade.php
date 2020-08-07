@@ -51,6 +51,9 @@
                 <li class="nav-item">
                   <a id="account" class="nav-link" href="{{ route('serviceServers.index') }}">Все серверы</a>
                 </li>
+                <li class="nav-item">
+                  <a id="account" class="nav-link" href="{{ route('account') }}">Личный кабинет</a>
+                </li>                
               @else
                 <li class="nav-item">
                   <a id="account" class="nav-link" href="{{ route('account') }}">Личный кабинет</a>
