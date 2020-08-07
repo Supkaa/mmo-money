@@ -49,8 +49,9 @@
                               <th scope="col">Название игры</th>
                               <th scope="col">Название сервера</th>
                               <th scope="col">Когда отправлен</th>
-                              <th scope="col">количесво внутриигровой валюты</th>
+                              <th scope="col">Количесво внутриигровой валюты</th>
                               <th scope="col">Сумма</th>                              
+                              <th scope="col">Подтверждение заказа</th>
                             </tr>
                           </thead>  
                                               
