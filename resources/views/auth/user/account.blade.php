@@ -46,6 +46,7 @@
                           <thead>
                             <tr>
                               <th scope="col">Имя персонажа</th>
+                              <th scope="col">Название игры</th>
                               <th scope="col">Название сервера</th>
                               <th scope="col">Когда отправлен</th>
                               <th scope="col">количесво внутриигровой валюты</th>
@@ -63,6 +64,7 @@
                                     @csrf
                                     <input name="id" type="hidden" readonly value="{{ $order->id }}">                                  
                                     <td>{{ $order->nickname }}</td>
+                                    <td>{{ $order->game }}</td>
                                     <td>{{ $order->server }}</td>
                                     <td>{{ $order->created_at }}</td>
                                     <td>{{ $order->gold }}</td>
@@ -84,9 +86,10 @@
                       <thead>
                         <tr>
                           <th scope="col">Имя персонажа</th>
+                          <th scope="col">Название игры</th>
                           <th scope="col">Название сервера</th>
                           <th scope="col">Когда отправлен</th>
-                          <th scope="col">количесво внутриигровой валюты</th>
+                          <th scope="col">Количесво внутриигровой валюты</th>
                           <th scope="col">Сумма</th>                              
                         </tr>
                       </thead>  
@@ -100,6 +103,7 @@
                               <form method="post" action={{route('user-confirm', $order)}}>
                                 @csrf
                                 <td>{{ $order->nickname }}</td>
+                                <td>{{ $order->game }}</td>
                                 <td>{{ $order->server }}</td>
                                 <td>{{ $order->created_at }}</td>
                                 <td>{{ $order->gold }}</td>

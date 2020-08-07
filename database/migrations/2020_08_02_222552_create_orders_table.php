@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->tinyInteger('status')->default(0);
             $table->string('server')->nullable();
             $table->string('nickname')->nullable();
+            $table->string('game')->nullable();
             $table->string('email')->nullable();            
             $table->double('count')->default(0);
             $table->double('gold')->default(0);

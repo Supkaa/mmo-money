@@ -45,6 +45,11 @@
                 </div>
                 @auth
                 <div class="form-group">
+                  <label for="game" class="sr-only">nickname</label>
+                  <input type="hidden" name="game" id="game" class="form-control" 
+                         value="{{ $game->name }}" required>
+                </div>
+                <div class="form-group">
                   <label for="email" class="sr-only">nickname</label>
                   <input type="hidden" name="email" id="email" class="form-control" 
                          value="{{ Auth::user()->email }}" required>

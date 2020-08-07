@@ -13,6 +13,7 @@ class BasketController extends Controller
         $games = Game::get();
         $orderId = session('orderId');
         $order = Order::create();
+        $order->game=$request->game;
         $order->email = $request->email;
         $order->nickname = $request->nickname;
         $order->server = $request->input('server');

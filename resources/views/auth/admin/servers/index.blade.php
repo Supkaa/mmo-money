@@ -40,7 +40,7 @@
               @endforeach
             </tbody>
           </table>
-          <a class="btn btn-outline-grey login" href="{{ route('serviceServers.create') }}">Добавить игру</a>
+          <a class="btn btn-outline-grey login" href="{{ route('serviceServers.create') }}">Добавить сервер</a>
         </div>
       </div>
     </div>

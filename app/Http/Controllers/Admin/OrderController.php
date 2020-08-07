@@ -24,7 +24,7 @@ class OrderController extends Controller
      */
     public function orders()
     {
-        $orders = Order::where('status',1)->get();
+        $orders = Order::get();
         return view('auth.admin.orders.index', compact('orders'));
     }
 }
