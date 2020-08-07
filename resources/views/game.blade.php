@@ -119,10 +119,9 @@ $(document).ready(function(){
 document.oninput = function() {
     var input = document.querySelector('#count');
     input.value = input.value.replace (/[^\+\d]/g, '');
-}
-document.oninput = function() {
     var input = document.querySelector('#nickname');
     input.value = input.value.replace (/[^a-zA-Zа-яА-Я]/g, '');
+
 }
 </script>
 @endsection
