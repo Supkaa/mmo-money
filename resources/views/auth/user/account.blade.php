@@ -45,7 +45,8 @@
                               <th scope="col">Имя персонажа</th>
                               <th scope="col">Название сервера</th>
                               <th scope="col">Когда отправлен</th>
-                              <th scope="col">Сумма</th>
+                              <th scope="col">количесво внутриигровой валюты</th>
+                              <th scope="col">Сумма</th>                              
                             </tr>
                           </thead>  
                                               
@@ -53,12 +54,13 @@
                             @if ((Auth::user()-> email) == ($order->email))
                               <tbody>
                                 <tr>
-                                  <form method="post" action={{route("user-confirm",$order)}}}>
+                                  <form method="post" action={{route("user-confirm",$order)}}>
                                     @csrf
                                     <input name="id" type="hidden" readonly value="{{ $order->id }}">                                  
                                     <td>{{ $order->nickname }}</td>
                                     <td>{{ $order->server }}</td>
                                     <td>{{ $order->created_at }}</td>
+                                    <td>{{ $order->gold }}</td>
                                     <td>{{ $order->count }}</td>
                                     <td><button style="btn btn-outline-grey" type="submit" >Success</button></td>
                                 </tr>          
