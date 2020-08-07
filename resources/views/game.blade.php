@@ -116,7 +116,7 @@
 <script>
 $(document).ready(function(){
   $("#count").keyup(function(){
-    $("#total-price").val($("#count").val() * $("#price").val());
+    $("#total-price").val(($("#count").val() * $("#price").val()).toFixed(2));
   });
 
 });
