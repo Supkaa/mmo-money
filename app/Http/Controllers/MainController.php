@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $games = Game::get();
+        $games = Game::paginate(4);
         return view('index', compact('games'));
     }
 
