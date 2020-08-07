@@ -27,7 +27,7 @@
 <body>
   <div class="modal-dialog text-center">
     <div class="col-9 main-section">
-      <div class="modal-content">
+      <div class="modal-content" style="width: 500px">
 
         <div class="user-img">
           <img src="/img/face.png" alt="">
