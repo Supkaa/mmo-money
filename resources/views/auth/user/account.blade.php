@@ -54,7 +54,7 @@
                             @if ((Auth::user()-> email) == ($order->email))
                               <tbody>
                                 <tr>
-                                  <form method="post" action={{route("user-confirm",$order)}}>
+                                  <form method="post" action={{route('user-confirm', $order)}}>
                                     @csrf
                                     <input name="id" type="hidden" readonly value="{{ $order->id }}">                                  
                                     <td>{{ $order->nickname }}</td>
@@ -63,6 +63,7 @@
                                     <td>{{ $order->gold }}</td>
                                     <td>{{ $order->count }}</td>
                                     <td><button style="btn btn-outline-grey" type="submit" >Success</button></td>
+                                  </form>
                                 </tr>          
                               </tbody>  
 
