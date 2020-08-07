@@ -13,7 +13,7 @@
           <div class="col-md-2">
             <div class="card profile" style="width: 18rem;">
               @if (!is_null(Auth::user()->image))
-                <img src="{{ (Auth::user()->image)}}" class="card-img-top" alt="...">  
+                <img src="{{ (Auth::user()->image)}}" class="card-img-top img-responsive" alt="...">  
               @endif
               <div class="card-body profile-edit-button">
                 <h5>{{ Auth::user()->name }}</h5>

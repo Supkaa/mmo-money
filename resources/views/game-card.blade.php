@@ -13,17 +13,10 @@
               </div>
 
               <div class="col-md-8 "> 
-                <div class="row">
-                  <div class="col">
                     <span class="card-text">{{ $game->description }}</span>
-                  </div>
-                </div>
 
-                <div class="row">
-                  <div class="col">
-                    <a href="/{{ $game->code }}" class="btn btn-primary">Подробнее</a>                  
-                  </div>
-                </div>
+                    <a href="/{{ $game->code }}" class="btn btn-outline-grey">Подробнее</a>                  
+
 
               </div>               
             </div>     
