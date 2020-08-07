@@ -42,7 +42,6 @@
 
                           <thead>
                             <tr>
-                              <th scope="col">#</th>
                               <th scope="col">Имя персонажа</th>
                               <th scope="col">Название сервера</th>
                               <th scope="col">Когда отправлен</th>
@@ -54,11 +53,14 @@
                             @if ((Auth::user()-> email) == ($order->email))
                               <tbody>
                                 <tr>
-                                  <td>{{ $order->id }}</td>
-                                  <td>{{ $order->nickname }}</td>
-                                  <td>{{ $order->server }}</td>
-                                  <td>{{ $order->created_at }}</td>
-                                  <td>{{ $order->count }}</td>
+                                  <form method="post" action={{route("user-confirm",$order)}}}>
+                                    @csrf
+                                    <input name="id" type="hidden" readonly value="{{ $order->id }}">                                  
+                                    <td>{{ $order->nickname }}</td>
+                                    <td>{{ $order->server }}</td>
+                                    <td>{{ $order->created_at }}</td>
+                                    <td>{{ $order->count }}</td>
+                                    <td><button style="btn btn-outline-grey" type="submit" >Success</button></td>
                                 </tr>          
                               </tbody>  
 

@@ -30,6 +30,8 @@ Route::group([
         'prefix' => 'basket'
     ], function () {
         Route::post('/confirm', 'BasketController@basketConfirm')->name('basket-confirm');
+        Route::post('/adminConfirm','BasketController@adminConfirm')->name('admin-confirm');
+        Route::post('/userConfirm','BasketController@userConfirm')->name('user-confirm');        
     });
 });
 Route::get('/{game}', 'MainController@game')->name('game');

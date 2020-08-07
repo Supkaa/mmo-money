@@ -15,10 +15,10 @@
               <div class="col-md-8 "> 
                 <div class="row">
                   <div class="col">
-
+                    <span class="card-text">{{ $game->description }}</span>
                   </div>
                 </div>
-                <p class="card-text">{{ $game->description }}</p>
+
                 <div class="row">
                   <div class="col">
                     <a href="/{{ $game->code }}" class="btn btn-primary">Подробнее</a>                  

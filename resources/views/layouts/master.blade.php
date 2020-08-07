@@ -71,7 +71,12 @@
       </div>
     </nav>
   </header>
+
+
+
   @yield('content')
+
+
 
   <footer id="footer" class="footer mt-auto py-3">
     <div class="container-fluid">

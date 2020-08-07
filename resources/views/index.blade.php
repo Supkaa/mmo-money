@@ -13,9 +13,10 @@
           @include('game-card')
         </div>
       </div>
-      {{ $games -> links()}}
+
     </div>
   </main>
+      {{ $games -> links()}}    
 @endsection
 
 

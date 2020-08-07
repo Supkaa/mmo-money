@@ -15,7 +15,6 @@ class ServicesTableSeeder extends Seeder
             [
                 'name'    => 'Купить золото WoW(retail)',
                 'game_id' => 1,
-                'image'   => '',
                 'price'   => 0.00553,
                 'code'    => 'gold'
             ],
@@ -23,10 +22,30 @@ class ServicesTableSeeder extends Seeder
             [
                 'name'    => 'Купить золото WoW(Classic)',
                 'game_id' => 2,
-                'image'   => '',
                 'price'   => 2.23,
                 'code'    => 'gold'
-            ],            
+            ],  
+            
+            [
+                'name'    => 'Купить адену Lineage 2(retail)',
+                'game_id' => 3,
+                'price'   => 0.122,
+                'code'    => 'gold'
+            ], 
+
+            [
+                'name'    => 'Купить адену Lineage 2(Classic)',
+                'game_id' => 4,
+                'price'   => 4,
+                'code'    => 'gold'
+            ], 
+
+            [
+                'name'    => 'Купить золото ArcheAge',
+                'game_id' => 5,
+                'price'   => 0.091,
+                'code'    => 'gold'
+            ], 
         ]);
     }
 }

@@ -19,7 +19,6 @@ class CreateServicesTable extends Migration
             
             $table->string('name');
             $table->integer('game_id');
-            $table->text('image')->nullable();
             $table->double('price')->default(0);
             $table->string('code');   
             

@@ -20,6 +20,10 @@ class CreateOrdersTable extends Migration
             $table->string('nickname')->nullable();
             $table->string('email')->nullable();            
             $table->double('count')->default(0);
+            $table->double('gold')->default(0);
+            $table->tinyInteger('admin_confirm')->default(0);
+            $table->tinyInteger('user_confirm')->default(0);
+
             $table->timestamps();
         });
     }
